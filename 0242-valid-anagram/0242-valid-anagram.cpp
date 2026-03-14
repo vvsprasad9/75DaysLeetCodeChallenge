@@ -4,15 +4,15 @@ public:
         if(s.size() != t.size()){
             return false;
         }else{
-            bool flag = false;
-            unordered_map<char,int>hm1;
-            unordered_map<char,int>hm2;
-            for(int i = 0;i<s.size();i++){
-                hm1[s[i]]++;
-                hm2[t[i]]++;
+            vector<int>v(26,0);
+            for(char c : s){
+                v[c - 'a']++;
             }
-            for(auto it : hm1){
-                if(hm1[it.first] != hm2[it.first]){
+            for(char c : t){
+                v[c - 'a']--;
+            }
+            for(int i : v){
+                if(i != 0){
                     return false;
                 }
             }
