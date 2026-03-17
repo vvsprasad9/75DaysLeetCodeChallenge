@@ -10,10 +10,10 @@ public:
         for(auto it : hm){
             ans[it.second].push_back(it.first);
         }
-        for(int i = nums.size();i>=0 && tot.size() < k;i--){
+        for(int i = nums.size();i>=0 ;i--){
             for(int x : ans[i]){
-                tot.push_back(x);
                 if(tot.size() == k)break;
+                tot.push_back(x);
             }
         }
         return tot;
