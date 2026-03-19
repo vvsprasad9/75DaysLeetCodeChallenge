@@ -11,8 +11,8 @@ public:
             for(char c : t){
                 v[c - 'a']--;
             }
-            for(int i : v){
-                if(i != 0){
+            for(int val : v){
+                if(val != 0){
                     return false;
                 }
             }
